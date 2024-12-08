@@ -63,5 +63,16 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.NODE_JS }
     ],
     repoUrl: 'https://github.com/devravinder/node-learn',
+  },
+  {
+    id: '3',
+    name: 'Learn JavaScript',
+    description: 'Learn JavaScript with examples and exercises',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.WEB_DEVELOPMENT, TAGS.FRONT_END],
+    technologies: [
+      { name: TECHNOLOGIES.JAVASCRIPT }
+    ],
+    repoUrl: 'https://github.com/devravinder/js-learn',
   }
 ];
