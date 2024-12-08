@@ -4,12 +4,19 @@ export function useRepositoryFilters(
   repositories: Repository[],
   searchQuery: string,
   selectedTags: string[],
+  selectedTechnologies: string[],
   selectedCategory: string | null
 ) {
   const allTags = useMemo(() => {
     const tags = new Set<string>();
     repositories.forEach((repo) => repo.tags.forEach((tag) => tags.add(tag)));
     return Array.from(tags);
+  }, [repositories]);
+
+  const allTechnologies = useMemo(() => {
+    const techs = new Set<string>();
+    repositories.forEach((repo) => repo.technologies.forEach((tech) => techs.add(tech.name)));
+    return Array.from(techs);
   }, [repositories]);
 
   const allCategories = useMemo(() => {
@@ -25,20 +32,24 @@ export function useRepositoryFilters(
 
       const matchesSearch = searchQuery === '' || 
         name.toLowerCase().includes(query) ||
-        description.toLowerCase().includes(query) ||
-        technologies.some(tech => tech.name.toLowerCase().includes(query));
+        description.toLowerCase().includes(query)
+        
 
       const matchesTags = selectedTags.length === 0 ||
         selectedTags.every(tag => tags.includes(tag));
 
+      const matchedTechnologies = selectedTechnologies.length === 0 ||
+        selectedTechnologies.every(tech => technologies.some(technology => technology.name === tech));   
+
       const matchesCategory = !selectedCategory || category === selectedCategory;
 
-      return matchesSearch && matchesTags && matchesCategory;
+      return matchesSearch && matchesTags && matchedTechnologies && matchesCategory;
     });
-  }, [repositories, searchQuery, selectedTags, selectedCategory]);
+  }, [repositories, searchQuery, selectedTags, selectedTechnologies, selectedCategory]);
 
   return {
     allTags,
+    allTechnologies,
     allCategories,
     filteredRepositories
   };

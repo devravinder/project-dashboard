@@ -6,7 +6,6 @@ interface RepositoryTechnologiesProps {
 
 export const RepositoryTechnologies: React.FC<RepositoryTechnologiesProps> = ({ technologies }) => {
   return (
-    <div className="mt-4">
       <div className="flex flex-wrap gap-2">
         {technologies.map((tech) => (
           <Chip
@@ -17,6 +16,5 @@ export const RepositoryTechnologies: React.FC<RepositoryTechnologiesProps> = ({ 
           </Chip>
         ))}
       </div>
-    </div>
   );
 };

@@ -10,7 +10,7 @@ interface RepositoryLinksProps {
 
 export const RepositoryLinks: React.FC<RepositoryLinksProps> = ({ repoUrl, websiteUrl }) => {
   return (
-    <div className="pt-4 flex flex-row justify-end gap-2">
+    <div className="flex flex-row justify-end gap-2">
       <A url={repoUrl}>
         <IconGithub className="h-4 w-4" />
       </A>

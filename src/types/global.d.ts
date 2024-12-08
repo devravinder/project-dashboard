@@ -12,5 +12,4 @@ type Repository = {
     technologies: Technology[];
     websiteUrl?: string;
     repoUrl: string;
-    type: string;
   };

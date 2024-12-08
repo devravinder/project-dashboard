@@ -11,12 +11,14 @@ import { useRepositoryFilters } from './hooks/useRepositoryFilters';
 export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  const { allTags, allCategories, filteredRepositories } = useRepositoryFilters(
+  const { allTags, allCategories, allTechnologies, filteredRepositories } = useRepositoryFilters(
     repositories,
     searchQuery,
     selectedTags,
+    selectedTechnologies,
     selectedCategory
   );
 
@@ -28,7 +30,7 @@ export default function App() {
           <div className="space-y-6">
           <SearchBar
             onSearch={setSearchQuery}
-            placeholder="Search repositories, technologies..."
+            placeholder="Search..."
           />
           
           <FilterSection title="Categories">
@@ -45,6 +47,15 @@ export default function App() {
               selectedTags={selectedTags}
               onTagSelect={(tag) => setSelectedTags([...selectedTags, tag])}
               onTagRemove={(tag) => setSelectedTags(selectedTags.filter(t => t !== tag))}
+            />
+          </FilterSection>
+
+          <FilterSection title="Technologies">
+            <TagFilter
+              tags={allTechnologies}
+              selectedTags={selectedTechnologies}
+              onTagSelect={(tech) => setSelectedTechnologies([...selectedTechnologies, tech])}
+              onTagRemove={(tech) => setSelectedTechnologies(selectedTechnologies.filter(t => t !== tech))}
             />
           </FilterSection>
           

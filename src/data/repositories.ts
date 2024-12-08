@@ -1,63 +1,67 @@
 
 const CATEGORIES = {
-  WEB_APPLICATIONS:'Web Applications',
-  PRODUCTIVITY:'productivity',
+  PERSONAL: 'Personal',
+  FREELANCE: 'Freelance',
+  PROFESSIONAL: 'Professional'
 }
 
 const TAGS = {
-  E_COMMERECE:'e-commerce',
-  PAYMENTS:'payments',
-  SHOPPING:'shopping',
-  PRODUCTIVITY:'productivity',
-  MANAGEMENT:'management',
-  COLLABORATION:'collaboration'
+  E_COMMERECE: 'e-commerce',
+  PAYMENTS: 'payments',
+  SHOPPING: 'shopping',
+  PRODUCTIVITY: 'productivity',
+  MANAGEMENT: 'management',
+  COLLABORATION: 'collaboration',
+  LEARN: 'learn',
+  WEB_DEVELOPMENT: 'web development',
+  MOBILE_DEVELOPMENT: 'mobile development',
+  BACK_END: 'back-end',
+  FRONT_END: 'front-end'
 }
 
 const TECHNOLOGIES = {
-  REACT:'React',
-  TYPESCRIPT:'TypeScript',
-  NODE_JS:'Node.js',
-  MONGODB:'MongoDB',
-  FIREBASE:'Firebase'
+  REACT: 'React',
+  TYPESCRIPT: 'TypeScript',
+  JAVASCRIPT: 'JavaScript',
+  JAVA: 'Java',
+  NODE_JS: 'Node.js',
+  MONGODB: 'MongoDB',
+  FIREBASE: 'Firebase',
+  CI_CD: 'CI/CD',
+  HTML: 'HTML',
+  CSS: 'CSS'
 }
 
-const TYPE = {
-  PERSONAL:'Personal',
-  FREELANCE:'Freelance',
-  PROFESSIONAL:'Professional'
-}
+
 
 export const repositories: Repository[] = [
   {
     id: '1',
-    name: 'E-commerce Platform',
-    description: 'A full-featured e-commerce solution with cart and payment integration',
-    category: CATEGORIES.WEB_APPLICATIONS,
-    tags: [TAGS.E_COMMERECE, TAGS.PAYMENTS, TAGS.SHOPPING],
+    name: 'Projects Dashboard',
+    description: 'An application to view all my projects at one place from Github/Bitbucket',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.MANAGEMENT],
     technologies: [
       { name: TECHNOLOGIES.REACT },
       { name: TECHNOLOGIES.TYPESCRIPT },
-      { name: TECHNOLOGIES.NODE_JS },
-      { name: TECHNOLOGIES.MONGODB }
-      
+      { name: TECHNOLOGIES.JAVASCRIPT },
+      { name: TECHNOLOGIES.HTML },
+      { name: TECHNOLOGIES.CSS },
+      { name: TECHNOLOGIES.CI_CD }
+
     ],
-    websiteUrl: 'https://example-shop.com',
-    repoUrl: 'https://github.com/username/ecommerce',
-    type: TYPE.PERSONAL
+    websiteUrl: 'https://projects.paravartech.com/',
+    repoUrl: 'https://github.com/devravinder/project-dashboard',
   },
   {
     id: '2',
-    name: 'Task Manager',
-    description: 'Project management tool with real-time updates',
-    category: CATEGORIES.PRODUCTIVITY,
-    tags: [TAGS.PRODUCTIVITY, TAGS.MANAGEMENT, TAGS.COLLABORATION],
+    name: 'Learn Node.js',
+    description: 'Learn Node.js with examples and exercises',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.WEB_DEVELOPMENT, TAGS.BACK_END],
     technologies: [
-      { name: TECHNOLOGIES.REACT },
-      { name: TECHNOLOGIES.TYPESCRIPT },
-      { name: TECHNOLOGIES.NODE_JS },
-      { name: TECHNOLOGIES.FIREBASE }
+      { name: TECHNOLOGIES.NODE_JS }
     ],
-    repoUrl: 'https://bitbucket.org/username/task-manager',
-    type: TYPE.PROFESSIONAL
+    repoUrl: 'https://github.com/devravinder/node-learn',
   }
 ];
