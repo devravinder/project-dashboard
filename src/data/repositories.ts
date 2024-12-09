@@ -13,6 +13,7 @@ const TAGS = {
   MANAGEMENT: 'management',
   COLLABORATION: 'collaboration',
   LEARN: 'learn',
+  INTERVIEW:'interview',
   WEB_DEVELOPMENT: 'web development',
   MOBILE_DEVELOPMENT: 'mobile development',
   BACK_END: 'back-end',
@@ -58,7 +59,7 @@ export const repositories: Repository[] = [
     name: 'Learn Node.js',
     description: 'Learn Node.js with examples and exercises',
     category: CATEGORIES.PERSONAL,
-    tags: [TAGS.LEARN, TAGS.WEB_DEVELOPMENT, TAGS.BACK_END],
+    tags: [TAGS.LEARN,TAGS.INTERVIEW ,TAGS.WEB_DEVELOPMENT, TAGS.BACK_END],
     technologies: [
       { name: TECHNOLOGIES.NODE_JS }
     ],
@@ -69,7 +70,7 @@ export const repositories: Repository[] = [
     name: 'Learn JavaScript',
     description: 'Learn JavaScript with examples and exercises',
     category: CATEGORIES.PERSONAL,
-    tags: [TAGS.LEARN, TAGS.WEB_DEVELOPMENT, TAGS.FRONT_END],
+    tags: [TAGS.LEARN, TAGS.INTERVIEW, TAGS.WEB_DEVELOPMENT, TAGS.FRONT_END],
     technologies: [
       { name: TECHNOLOGIES.JAVASCRIPT }
     ],
