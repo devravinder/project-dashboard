@@ -56,23 +56,13 @@ export const repositories: Repository[] = [
   },
   {
     id: '2',
-    name: 'Learn Node.js',
-    description: 'Learn Node.js with examples and exercises',
-    category: CATEGORIES.PERSONAL,
-    tags: [TAGS.LEARN,TAGS.INTERVIEW ,TAGS.WEB_DEVELOPMENT, TAGS.BACK_END],
-    technologies: [
-      { name: TECHNOLOGIES.NODE_JS }
-    ],
-    repoUrl: 'https://github.com/devravinder/node-learn',
-  },
-  {
-    id: '3',
-    name: 'Learn JavaScript',
+    name: 'Learn Js (JavaScript & Node.js',
     description: 'Learn JavaScript with examples and exercises',
     category: CATEGORIES.PERSONAL,
     tags: [TAGS.LEARN, TAGS.INTERVIEW, TAGS.WEB_DEVELOPMENT, TAGS.FRONT_END],
     technologies: [
-      { name: TECHNOLOGIES.JAVASCRIPT }
+      { name: TECHNOLOGIES.JAVASCRIPT },
+      {name: TECHNOLOGIES.NODE_JS}
     ],
     repoUrl: 'https://github.com/devravinder/js-learn',
   }
