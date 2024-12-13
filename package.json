@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "pnpm build && gh-pages -d dist --cname projects.paravartech.com"
+    "deploy": " dotenv -e .env -- pnpm build && gh-pages -d dist --cname $CNAME",
+    "check:env":"dotenv -e .env -- sh -c 'echo $CNAME'"
   },
   "dependencies": {
     "react": "^19.0.0",
@@ -21,6 +22,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "babel-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
+    "dotenv-cli": "^7.4.4",
     "eslint": "^9.16.0",
     "eslint-plugin-react-compiler": "19.0.0-beta-df7b47d-20241124",
     "eslint-plugin-react-hooks": "^5.1.0",
