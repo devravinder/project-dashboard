@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+export const ALL = 'All'
+
 export function useRepositoryFilters(
   repositories: Repository[],
   searchQuery: string,
@@ -20,7 +22,7 @@ export function useRepositoryFilters(
   }, [repositories]);
 
   const allCategories = useMemo(() => {
-    const categories = new Set<string>();
+    const categories = new Set<string>([ALL]);
     repositories.forEach((repo) => categories.add(repo.category));
     return Array.from(categories);
   }, [repositories]);
@@ -41,7 +43,7 @@ export function useRepositoryFilters(
       const matchedTechnologies = selectedTechnologies.length === 0 ||
         selectedTechnologies.every(tech => technologies.some(technology => technology.name === tech));   
 
-      const matchesCategory = !selectedCategory || category === selectedCategory;
+      const matchesCategory = !selectedCategory || selectedCategory === ALL || category === selectedCategory;
 
       return matchesSearch && matchesTags && matchedTechnologies && matchesCategory;
     });

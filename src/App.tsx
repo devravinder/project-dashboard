@@ -12,7 +12,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedTechnologies, setSelectedTechnologies] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
   const { allTags, allCategories, allTechnologies, filteredRepositories } = useRepositoryFilters(
     repositories,
@@ -28,39 +28,44 @@ export default function App() {
         <div className="flex flex-col gap-4">
           <h1 className="text-3xl font-bold text-gray-900">Repository Dashboard</h1>
           <div className="space-y-6">
-          <SearchBar
-            onSearch={setSearchQuery}
-            placeholder="Search..."
-          />
-          
-          <FilterSection title="Categories">
-            <CategoryFilter
-              categories={allCategories}
-              selectedCategory={selectedCategory}
-              onCategorySelect={setSelectedCategory}
-            />
-          </FilterSection>
-          
-          <FilterSection title="Tags">
-            <TagFilter
-              tags={allTags}
-              selectedTags={selectedTags}
-              onTagSelect={(tag) => setSelectedTags([...selectedTags, tag])}
-              onTagRemove={(tag) => setSelectedTags(selectedTags.filter(t => t !== tag))}
-            />
-          </FilterSection>
 
-          <FilterSection title="Technologies">
-            <TagFilter
-              tags={allTechnologies}
-              selectedTags={selectedTechnologies}
-              onTagSelect={(tech) => setSelectedTechnologies([...selectedTechnologies, tech])}
-              onTagRemove={(tech) => setSelectedTechnologies(selectedTechnologies.filter(t => t !== tech))}
-            />
-          </FilterSection>
-          
-          <RepositoryGrid repositories={filteredRepositories} />
-        </div>
+            <div className="flex flex-col gap-4 shadow-md p-6 bg-white rounded-md">
+              <SearchBar
+                onSearch={setSearchQuery}
+                placeholder="Search..."
+              />
+
+              <FilterSection title="Category">
+                <CategoryFilter
+                  categories={allCategories}
+                  selectedCategory={selectedCategory}
+                  onCategorySelect={setSelectedCategory}
+                />
+              </FilterSection>
+
+              <FilterSection title="Tags">
+                <TagFilter
+                  rounded={true}
+                  icons={true}
+                  tags={allTags}
+                  selectedTags={selectedTags}
+                  onTagSelect={(tag) => setSelectedTags([...selectedTags, tag])}
+                  onTagRemove={(tag) => setSelectedTags(selectedTags.filter(t => t !== tag))}
+                />
+              </FilterSection>
+
+              <FilterSection title="Technologies">
+                <TagFilter
+                  tags={allTechnologies}
+                  selectedTags={selectedTechnologies}
+                  onTagSelect={(tech) => setSelectedTechnologies([...selectedTechnologies, tech])}
+                  onTagRemove={(tech) => setSelectedTechnologies(selectedTechnologies.filter(t => t !== tech))}
+                />
+              </FilterSection>
+            </div>
+
+            <RepositoryGrid repositories={filteredRepositories} />
+          </div>
         </div>
       </div>
     </div>

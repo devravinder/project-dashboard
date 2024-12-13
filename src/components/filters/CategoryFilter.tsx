@@ -1,29 +1,27 @@
-import tw from 'tailwind-styled-components'
 
 interface CategoryFilterProps {
   categories: string[];
-  selectedCategory: string | null;
-  onCategorySelect: (category: string | null) => void;
+  selectedCategory: string;
+  onCategorySelect: (category: string) => void;
 }
 
 export const CategoryFilter = ({
   categories,
   selectedCategory,
   onCategorySelect,
-}:CategoryFilterProps) => {
+}: CategoryFilterProps) => {
   return (
-    <div className="flex flex-wrap gap-2">
-      <Button onClick={() => onCategorySelect(null)} $active={selectedCategory === null}>All</Button>
+    <select
+      value={selectedCategory}
+      onChange={(e) => onCategorySelect(e.target.value)}
+      className="w-full px-3 py-2 bg-inherit border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+    >
       {categories.map((category) => (
-        <Button
-          key={category}
-          onClick={() => onCategorySelect(category)}
-          $active={selectedCategory === category}>
+        <option key={category} value={category}>
           {category}
-        </Button>
+        </option>
       ))}
-    </div>
+    </select>
   );
 };
 
-const Button = tw.button<{ $active?: boolean }>`px-3 py-1 rounded-md text-sm font-medium ${(p)=>p.$active ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-800 hover:bg-gray-200'}`

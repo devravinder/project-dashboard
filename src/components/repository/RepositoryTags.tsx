@@ -1,5 +1,6 @@
 import React from 'react';
 import { Chip } from '../Common';
+import IconTag from '../icons/IconTag';
 
 interface RepositoryTagsProps {
   tags: string[];
@@ -12,8 +13,10 @@ export const RepositoryTags: React.FC<RepositoryTagsProps> = ({ tags }) => {
         <Chip
           key={tag}
           className="text-gray-600"
+          $rounded={true}
         >
-          #{tag}
+          <IconTag className='w-4 h-4' />
+          {tag}
         </Chip>
       ))}
     </div>

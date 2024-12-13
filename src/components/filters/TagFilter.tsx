@@ -1,10 +1,13 @@
 import { Chip } from '../Common';
+import IconTag from '../icons/IconTag';
 
 interface TagFilterProps {
   tags: string[];
   selectedTags: string[];
   onTagSelect: (tag: string) => void;
   onTagRemove: (tag: string) => void;
+  icons?: boolean;
+  rounded?: boolean
 }
 
 export const TagFilter = ({
@@ -12,6 +15,8 @@ export const TagFilter = ({
   selectedTags,
   onTagSelect,
   onTagRemove,
+  icons = false,
+  rounded = false
 }: TagFilterProps) => {
   return (
     <div className="space-y-2">
@@ -25,7 +30,9 @@ export const TagFilter = ({
                 onClick={() => selected ? onTagRemove(tag) : onTagSelect(tag)}
                 $clickable={true}
                 $active={selected}
+                $rounded={rounded}
               >
+                {icons && <IconTag className='w-4 h-4' />}
                 {tag}
               </Chip>
             )

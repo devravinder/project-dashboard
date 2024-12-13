@@ -102,7 +102,7 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.REACT },
       {name: TECHNOLOGIES.NODE_JS},
       {name:TECHNOLOGIES.TYPESCRIPT},
-      {name: TECHNOLOGIES.HONO_JS}
+      {name: TECHNOLOGIES.EXPRESS_JS}
     ],
     repoUrl: 'https://github.com/devravinder/video-streaming',
   },
