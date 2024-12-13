@@ -16,8 +16,19 @@ const TAGS = {
   INTERVIEW:'interview',
   WEB_DEVELOPMENT: 'web development',
   MOBILE_DEVELOPMENT: 'mobile development',
+  MICROSERVICES: 'microservices',
   BACK_END: 'back-end',
-  FRONT_END: 'front-end'
+  FRONT_END: 'front-end',
+  FULL_STACK: 'full-stack',
+  REST:'rest',
+  GRAPHQL:'graphql',
+  DATABASE:'database',
+  CLOUD:'cloud',
+  CI_CD:'CI/CD',
+  DEV_OPS:'dev-ops',
+  STREAMING:'streaming',
+  VIDEO_STREAMING:'Video Streaming',
+  AUDIO_STREAMING:'Audio Streaming'
 }
 
 const TECHNOLOGIES = {
@@ -30,7 +41,10 @@ const TECHNOLOGIES = {
   FIREBASE: 'Firebase',
   CI_CD: 'CI/CD',
   HTML: 'HTML',
-  CSS: 'CSS'
+  CSS: 'CSS',
+  GRPC: 'gRPC',
+  EXPRESS_JS: 'Express',
+  HONO_JS: 'HonoJs'
 }
 
 
@@ -65,5 +79,43 @@ export const repositories: Repository[] = [
       {name: TECHNOLOGIES.NODE_JS}
     ],
     repoUrl: 'https://github.com/devravinder/js-learn',
+  },
+  {
+    id: '3',
+    name: 'Learn gRPC',
+    description: 'Learn gRPC fundamentals with Todo app in node.js',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END],
+    technologies: [
+      { name: TECHNOLOGIES.GRPC },
+      {name: TECHNOLOGIES.NODE_JS}
+    ],
+    repoUrl: 'https://github.com/devravinder/grpc-todo',
+  },
+  {
+    id: '4',
+    name: 'Video Streaming App',
+    description: 'Learn Video Streaming',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END, TAGS.FRONT_END, TAGS.FULL_STACK, TAGS.STREAMING, TAGS.VIDEO_STREAMING],
+    technologies: [
+      { name: TECHNOLOGIES.REACT },
+      {name: TECHNOLOGIES.NODE_JS},
+      {name:TECHNOLOGIES.TYPESCRIPT},
+      {name: TECHNOLOGIES.HONO_JS}
+    ],
+    repoUrl: 'https://github.com/devravinder/video-streaming',
+  },
+  {
+    id: '5',
+    name: 'React Interview',
+    description: 'React Interview Questions',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.FRONT_END, TAGS.INTERVIEW],
+    technologies: [
+      { name: TECHNOLOGIES.REACT },
+      {name: TECHNOLOGIES.TYPESCRIPT}
+    ],
+    repoUrl: 'https://github.com/devravinder/react-ts-interview',
   }
 ];
