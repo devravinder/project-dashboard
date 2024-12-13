@@ -1,4 +1,3 @@
-import IconClose from '../icons/IconClose';
 import { Chip } from '../Common';
 
 interface TagFilterProps {
@@ -17,25 +16,20 @@ export const TagFilter = ({
   return (
     <div className="space-y-2">
       <div className="flex flex-wrap gap-2">
-        {selectedTags.map((tag) => (
-          <Chip key={tag} $active={true}>
-            <span>{tag}</span>
-            <IconClose onClick={() => onTagRemove(tag)} className="h-3 w-3 cursor-pointer" />
-          </Chip>
-        ))}
-      </div>
-      <div className="flex flex-wrap gap-2">
         {tags
-          .filter((tag) => !selectedTags.includes(tag))
-          .map((tag) => (
-            <Chip
-              key={tag}
-              onClick={() => onTagSelect(tag)}
-              $clickable={true}
-            >
-              {tag}
-            </Chip>
-          ))}
+          .map((tag) => {
+            const selected = selectedTags.includes(tag);
+            return (
+              <Chip
+                key={tag}
+                onClick={() => selected ? onTagRemove(tag) : onTagSelect(tag)}
+                $clickable={true}
+                $active={selected}
+              >
+                {tag}
+              </Chip>
+            )
+          })}
       </div>
     </div>
   );
