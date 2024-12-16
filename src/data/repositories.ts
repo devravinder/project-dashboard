@@ -117,5 +117,16 @@ export const repositories: Repository[] = [
       {name: TECHNOLOGIES.TYPESCRIPT}
     ],
     repoUrl: 'https://github.com/devravinder/react-ts-interview',
-  }
+  },
+  {
+    id: '6',
+    name: 'Learn Java',
+    description: 'Learn Java fundamentals with examples',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END],
+    technologies: [
+      { name: TECHNOLOGIES.JAVA },
+    ],
+    repoUrl: 'https://github.com/devravinder/java-learn',
+  },
 ];
