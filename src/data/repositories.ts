@@ -28,7 +28,8 @@ const TAGS = {
   DEV_OPS:'dev-ops',
   STREAMING:'streaming',
   VIDEO_STREAMING:'Video Streaming',
-  AUDIO_STREAMING:'Audio Streaming'
+  AUDIO_STREAMING:'Audio Streaming',
+  SECURITY: 'Security'
 }
 
 const TECHNOLOGIES = {
@@ -44,7 +45,9 @@ const TECHNOLOGIES = {
   CSS: 'CSS',
   GRPC: 'gRPC',
   EXPRESS_JS: 'Express',
-  HONO_JS: 'HonoJs'
+  HONO_JS: 'HonoJs',
+  SPRING_BOOT: 'Spring Boot',
+  SPRING_SECURITY: 'Spring Security',
 }
 
 
@@ -128,5 +131,18 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.JAVA },
     ],
     repoUrl: 'https://github.com/devravinder/java-learn',
+  },
+  {
+    id: '7',
+    name: 'Learn Spring Boot Security',
+    description: 'Learn Spring Boot Security fundamentals with examples',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END, TAGS.SECURITY],
+    technologies: [
+      { name: TECHNOLOGIES.JAVA },
+      { name: TECHNOLOGIES.SPRING_BOOT},
+      { name: TECHNOLOGIES.SPRING_SECURITY}
+    ],
+    repoUrl: 'https://github.com/devravinder/spring-security-learn',
   },
 ];
