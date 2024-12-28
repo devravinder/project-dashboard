@@ -145,4 +145,16 @@ export const repositories: Repository[] = [
     ],
     repoUrl: 'https://github.com/devravinder/spring-security-learn',
   },
+  {
+    id: '8',
+    name: 'Learn Spring Boot',
+    description: 'Learn Spring Boot fundamentals with examples',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END],
+    technologies: [
+      { name: TECHNOLOGIES.JAVA },
+      { name: TECHNOLOGIES.SPRING_BOOT},
+    ],
+    repoUrl: 'https://github.com/devravinder/spring-boot-learn',
+  },
 ];
