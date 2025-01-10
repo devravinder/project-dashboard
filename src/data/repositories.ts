@@ -29,7 +29,8 @@ const TAGS = {
   STREAMING:'streaming',
   VIDEO_STREAMING:'Video Streaming',
   AUDIO_STREAMING:'Audio Streaming',
-  SECURITY: 'Security'
+  SECURITY: 'Security',
+  MICRO_SERVICES: 'Microservices',
 }
 
 const TECHNOLOGIES = {
@@ -156,5 +157,29 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.SPRING_BOOT},
     ],
     repoUrl: 'https://github.com/devravinder/spring-boot-learn',
+  },
+  {
+    id: '9',
+    name: 'Insta Cred',
+    description: 'Spring Boot Micro Services application ',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END, TAGS.MICROSERVICES],
+    technologies: [
+      { name: TECHNOLOGIES.JAVA },
+      { name: TECHNOLOGIES.SPRING_BOOT},
+    ],
+    repoUrl: 'https://github.com/devravinder/insta-cred',
+  },
+  {
+    id: '10',
+    name: 'Spring Boot Micro Services',
+    description: 'Learn Spring Boot advanced micro Services ',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.BACK_END, TAGS.MICROSERVICES],
+    technologies: [
+      { name: TECHNOLOGIES.JAVA },
+      { name: TECHNOLOGIES.SPRING_BOOT},
+    ],
+    repoUrl: 'https://github.com/devravinder/spring-boot-micro-services',
   },
 ];
