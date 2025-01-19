@@ -31,6 +31,7 @@ const TAGS = {
   AUDIO_STREAMING:'Audio Streaming',
   SECURITY: 'Security',
   MICRO_SERVICES: 'Microservices',
+  MONO_REPO: 'Monorepo',
 }
 
 const TECHNOLOGIES = {
@@ -51,7 +52,8 @@ const TECHNOLOGIES = {
   SPRING_SECURITY: 'Spring Security',
   DOCKER: 'Docker',
   KUBERNETES: 'Kubernetes',
-  HELM: 'Helm'
+  HELM: 'Helm',
+  NEXT_JS: 'Next.js',
 }
 
 
@@ -208,5 +210,18 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.KUBERNETES},
     ],
     repoUrl: 'https://github.com/devravinder/rare-helm-charts',
+  },
+  {
+    id: '13',
+    name: 'Rare Development',
+    description: 'mono repo for multiple projects',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.MONO_REPO],
+    technologies: [
+      { name: TECHNOLOGIES.NODE_JS },
+      { name: TECHNOLOGIES.REACT},
+      { name: TECHNOLOGIES.NEXT_JS},
+    ],
+    repoUrl: 'https://github.com/devravinder/rare-dev',
   },
 ];
