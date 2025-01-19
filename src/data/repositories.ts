@@ -49,6 +49,9 @@ const TECHNOLOGIES = {
   HONO_JS: 'HonoJs',
   SPRING_BOOT: 'Spring Boot',
   SPRING_SECURITY: 'Spring Security',
+  DOCKER: 'Docker',
+  KUBERNETES: 'Kubernetes',
+  HELM: 'Helm'
 }
 
 
@@ -181,5 +184,29 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.SPRING_BOOT},
     ],
     repoUrl: 'https://github.com/devravinder/spring-boot-micro-services',
+  },
+  {
+    id: '11',
+    name: 'Learn Docker & Kubernetes',
+    description: 'Learn Docker & Kubernetes with examples',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.DEV_OPS],
+    technologies: [
+      { name: TECHNOLOGIES.DOCKER },
+      { name: TECHNOLOGIES.KUBERNETES},
+    ],
+    repoUrl: 'https://github.com/devravinder/docker_k8',
+  },
+  {
+    id: '12',
+    name: 'Kubernete Helm Charts',
+    description: 'to store personal kubernetes helm charts',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.DEV_OPS],
+    technologies: [
+      { name: TECHNOLOGIES.HELM },
+      { name: TECHNOLOGIES.KUBERNETES},
+    ],
+    repoUrl: 'https://github.com/devravinder/rare-helm-charts',
   },
 ];
