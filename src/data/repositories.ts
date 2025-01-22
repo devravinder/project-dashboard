@@ -26,6 +26,7 @@ const TAGS = {
   CLOUD:'cloud',
   CI_CD:'CI/CD',
   DEV_OPS:'dev-ops',
+  DESIGN_PATTERNS:'design patterns',
   STREAMING:'streaming',
   VIDEO_STREAMING:'Video Streaming',
   AUDIO_STREAMING:'Audio Streaming',
@@ -223,5 +224,17 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.NEXT_JS},
     ],
     repoUrl: 'https://github.com/devravinder/rare-dev',
+  },
+  {
+    id: '14',
+    name: 'Learn Design Patterns',
+    description: 'Learn Design Patterns with examples',
+    category: CATEGORIES.PERSONAL,
+    tags: [TAGS.LEARN, TAGS.DESIGN_PATTERNS],
+    technologies: [
+      { name: TECHNOLOGIES.JAVA },
+      { name: TECHNOLOGIES.SPRING_BOOT},
+    ],
+    repoUrl: 'https://github.com/devravinder/learn-disign-patterns',
   },
 ];
