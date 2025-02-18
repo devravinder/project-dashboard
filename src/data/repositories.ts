@@ -198,7 +198,7 @@ export const repositories: Repository[] = [
       { name: TECHNOLOGIES.DOCKER },
       { name: TECHNOLOGIES.KUBERNETES},
     ],
-    repoUrl: 'https://github.com/devravinder/docker_k8',
+    repoUrl: 'https://github.com/devravinder/learn-docker-k8.git',
   },
   {
     id: '12',
